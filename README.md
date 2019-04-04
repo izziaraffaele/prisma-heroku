@@ -35,7 +35,7 @@ This repository showcases how to deploy Prisma to Heroku.
         1. `DB_PASSWORD` to your database password
         1. `DB_PORT` to your database port
         1. `DB_USER` to your database user
-        1. `DB_HOST` to your database name
+        1. `DB_NAME` to your database name
         1. `PRISMA_CONFIG_PATH` to `/app/config.yml`
     1. **Note**: This example repo uses PostgreSQL. To change that, simply change the `connector: postgres` to `connector: mysql` in `prerun_hook.sh`.
 1. Finally, deploy the app with `heroku container:release web -a <your_app_name>`
