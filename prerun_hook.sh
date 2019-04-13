@@ -5,14 +5,12 @@ set -e
 printf "
 port: ${PORT}
 # managementApiSecret: ${MGMT_SECRET}
+
 databases:
   default:
     connector: postgres
-    host: ${DB_HOST}
-    port: ${DB_PORT}
-    database: ${DB_NAME}
-    schema: public
-    user: ${DB_USER}
-    password: ${DB_PASSWORD}
+    rawAccess: true
     migrations: true
+    connectionLimit: 2
+    uri: ${DATABASE_URL}?ssl=1
 " >> ${PRISMA_CONFIG_PATH}
